@@ -3,7 +3,7 @@ services:
   node-nvidia-smi-api:
     container_name: node-nvidia-smi-api
     image: jammsen/node-nvidia-smi-api:21.7-bookworm
-    restart: no
+    restart: unless-stopped
     build:
       context: .
     user: node
