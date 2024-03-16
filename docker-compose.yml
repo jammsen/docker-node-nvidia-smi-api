@@ -1,0 +1,21 @@
+version: '3.9'
+services:
+  node-nvidia-smi-api:
+    container_name: node-nvidia-smi-api
+    image: jammsen/node-nvidia-smi-api:21.7-bookworm
+    restart: no
+    build:
+      context: .
+    user: node
+    working_dir: /home/node/app
+    ports:
+      - 7777:7777
+    command: "npm start"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities:
+                - gpu
