@@ -4,12 +4,14 @@ services:
     container_name: node-nvidia-smi-api
     image: jammsen/node-nvidia-smi-api:21.7-bookworm
     restart: unless-stopped
+    environment:
+      PORT: 2080
     build:
       context: .
     user: node
     working_dir: /home/node/app
     ports:
-      - 7777:7777
+      - 2080:2080
     command: "npm start"
     deploy:
       resources:
