@@ -2,7 +2,7 @@ version: '3.9'
 services:
   node-nvidia-smi-api:
     container_name: node-nvidia-smi-api
-    image: jammsen/node-nvidia-smi-api:21.7-bookworm
+    image: jammsen/node-nvidia-smi-api:21.7.1-bookworm-slim
     restart: unless-stopped
     environment:
       PORT: 2080
