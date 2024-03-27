@@ -1,3 +1,9 @@
+/**
+ * Imports required modules: 
+ * - http - for creating an HTTP server
+ * - exec - for executing shell commands
+ * - xml2js - for parsing XML to JSON
+*/
 const http = require('http');
 const { exec } = require('child_process');
 const xml2js = require('xml2js');
